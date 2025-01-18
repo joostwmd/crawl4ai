@@ -25,3 +25,7 @@ When trying to use an LLM to extract data from a page, I am getting the followin
 I set the `OPENAI_API_KEY` in the `.env` file. I also used Docker desktop to log the environment variables, confirming that the key is correct. The key is also valid, as I can use it in the OpenAI API playground.
 
 I'm not sure what I'm doing wrong.
+
+### My current setup
+
+MacBook Pro 2020, M1, 8GB RAM, Sonoma 14.1
