@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  crawl4ai:
+    image: unclecode/crawl4ai:all
+    ports:
+      - "11235:11235"
+    environment:
+      - MAX_CONCURRENT_TASKS=5
+      - ENABLE_BROWSER=true
+      - CRAWL4AI_ALLOW_EXTERNAL=true
+      - CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LOG_LEVEL=DEBUG
+      - CRAWL4AI_DEBUG=true
+    env_file:
+      - .env
+    volumes:
+      - /dev/shm:/dev/shm
+      - .env:/app/.env
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 1G
